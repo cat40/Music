@@ -18,6 +18,7 @@ else:
 def fix(line):
     line = line.replace('\\pageBreak', '')
     line = line.split(' | ')[0]  # removes the | % n on each line
+    if line[-1] != '\n': line += '\n'
     line = line.rstrip(' ')
     line = line.replace('        skipBars = ##t', '').replace('        autoBeaming = ##f', '')  # todo put this somehwere else
     line = line.replace('[ ', '').replace(' ]', '')  # remove the manual beams
