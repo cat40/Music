@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="feae22bf-79aa-406a-bedd-7bdf8ebe8b45" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/fixConversions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/fixConversions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +16,11 @@
       <file leaf-file-name="fixConversions.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Python/fixConversions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="408">
+              <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+              <folding>
+                <element signature="e#272#282#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -35,9 +38,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="965" />
-    <option name="width" value="964" />
-    <option name="height" value="1040" />
+    <option name="x" value="606" />
+    <option name="y" value="28" />
+    <option name="width" value="963" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -121,8 +125,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Python/fixConversions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state relative-caret-position="408">
+          <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <folding>
+            <element signature="e#272#282#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
