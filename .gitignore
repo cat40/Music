@@ -6,6 +6,9 @@
 *.log
 *~
 
+# testing ouput
+*.lyout.ly
+
 # python
 # Byte-compiled / optimized / DLL files
 __pycache__/

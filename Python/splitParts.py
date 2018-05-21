@@ -42,28 +42,45 @@ def parse(fname):
     #     pass
 
 
-def parsedumb(fname, octave):
+def parsedumb(fname, octave, clef=None, midiinstrument=None):
     '''
     this will not catch sometjing defined without a \relative block
     :param fname: file name
     :param octave: octave to transpose to
-    :return:
+    :param clef: clef to use for every line. If None, clefs are unchanged
+    :param midiinstrument: midiinstrument to use for all tracks. If None, instruments are unchanged
+    :return: None
     '''
     with open(fname, 'r') as f:
         text = f.read()
         relatives = re.finditer(r'\\relative [^ ]+', text)
         music = ''''''
         prevstart = 0
+        # relative blocks
         for relative in relatives:
             start = relative.start()
-            music += text[prevstart:start]  # todo make sure this dosent' have an off by 1 error
+            music += text[prevstart:start]
             music += '\\relative c' + octave
             prevstart = relative.end()
+        # clefs
+        if clef is not None:
+            text = music
+            music = ''''''
+            prevstart = 0
+            clefs = re.finditer(r'\\clef [^ ]+')
+            for match in clefs:
+                start = match.start()
+                music += text[prevstart:start]
+                music += '\\clef ' + clef
+                prevstart = match.end()
+
+
+
     with open(fname+'out.ly', 'w') as out:
         out.write(music)
 
 
 # run tests
 if __name__ == '__main__':
-    fname = 'Music\\MajorScale.ly'
-    parsedumb(fname, "c''''")
+    fname = '..\\Music\\MajorScale.ly'
+    parsedumb(fname, ",", 'bass')
