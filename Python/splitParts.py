@@ -56,13 +56,14 @@ def parsedumb(fname, octave):
         prevstart = 0
         for relative in relatives:
             start = relative.start()
-            prevstart = relative.end()
             music += text[prevstart:start]  # todo make sure this dosent' have an off by 1 error
             music += '\\relative c' + octave
+            prevstart = relative.end()
+    with open(fname+'out.ly', 'w') as out:
+        out.write(music)
 
 
 # run tests
 if __name__ == '__main__':
     fname = 'Music\\MajorScale.ly'
     parsedumb(fname, "c''''")
-    
