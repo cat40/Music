@@ -6,6 +6,8 @@
                                       "For details, see https://creativecommons.org/licenses/by-nc-sa/4.0/"}
 }
 
+scale = {c d e f g a b}
+
 verse = {
     g4 \mf g4 a4 a4 % solo
     g4. f8 e2
@@ -30,7 +32,7 @@ global = {
 }
 %try transposing down from g to d
 verse = {
-    g4 \mf g4 a4 a4 % solo
+    g4 g4 a4 a4 % solo
     g4. f8 e2
     %ensemble
     <g>4 <g>4 <a>4 <a>4
@@ -42,8 +44,8 @@ verse = {
     c2 b4 a4
     g1
     a2 g4 f4
-    e1 \p
-    g4 g4 c,4 f4 \mf
+    e1
+    g4 g4 c,4 f4
     e2 d2
     c2.r4
 }
@@ -60,18 +62,18 @@ cello = \transpose c c'{
   }
 }
 
-celloTwo = \transpose c a {
+celloTwo = \modalTranspose c e \scale {
   \relative c {
   \global
-  R1*15 \bar "||"
+  R1*15 \pp \bar "||"
   \verse
   }
 }
 
-celloThree = \transpose c e {
+celloThree = \modalTranspose c g \scale {
   \relative c {
   \global
-  R1*15  \bar "||" 
+  R1*15 \pp  \bar "||" 
   \verse
   }
 }
