@@ -45,11 +45,13 @@ def parse(fname):
 def parsedumb(fname, octave, clef=None, midiinstrument=None):
     '''
     this will not catch sometjing defined without a \relative block
+    Will not catch treble clef not explicity delcared with a /clef statement
     :param fname: file name
     :param octave: octave to transpose to
     :param clef: clef to use for every line. If None, clefs are unchanged
     :param midiinstrument: midiinstrument to use for all tracks. If None, instruments are unchanged
     :return: None
+    todo catch implicit treble clef
     '''
     with open(fname, 'r') as f:
         text = f.read()
@@ -68,7 +70,7 @@ def parsedumb(fname, octave, clef=None, midiinstrument=None):
             text = music
             music = ''''''
             prevstart = 0
-            clefs = re.finditer(r'\\clef [^ ]+')
+            clefs = re.finditer(r'\\clef [^ ]+', text)
             for match in clefs:
                 start = match.start()
                 music += text[prevstart:start]
@@ -77,7 +79,7 @@ def parsedumb(fname, octave, clef=None, midiinstrument=None):
             music += text[prevstart:-1]
         # midi instrument
         if midiinstrument is not None:
-            test = music
+            text = music
             music = ''''''
             prevstart = 0
             instruments = re.finditer(r'midiInstrument = "[^"]*"', text)
@@ -94,4 +96,4 @@ def parsedumb(fname, octave, clef=None, midiinstrument=None):
 # run tests
 if __name__ == '__main__':
     fname = '..\\Music\\MajorScale.ly'
-    parsedumb(fname, ",", 'bass')
+    parsedumb(fname, ",", clef='bass', midiinstrument='cello')
