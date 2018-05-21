@@ -59,4 +59,10 @@ def parsedumb(fname, octave):
             prevstart = relative.end()
             music += text[prevstart:start]  # todo make sure this dosent' have an off by 1 error
             music += '\\relative c' + octave
-            
+
+
+# run tests
+if __name__ == '__main__':
+    fname = 'Music\\MajorScale.ly'
+    parsedumb(fname, "c''''")
+    
