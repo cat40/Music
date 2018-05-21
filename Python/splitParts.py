@@ -62,6 +62,7 @@ def parsedumb(fname, octave, clef=None, midiinstrument=None):
             music += text[prevstart:start]
             music += '\\relative c' + octave
             prevstart = relative.end()
+        music += text[prevstart:-1]
         # clefs
         if clef is not None:
             text = music
@@ -73,9 +74,19 @@ def parsedumb(fname, octave, clef=None, midiinstrument=None):
                 music += text[prevstart:start]
                 music += '\\clef ' + clef
                 prevstart = match.end()
-
-
-
+            music += text[prevstart:-1]
+        # midi instrument
+        if midiinstrument is not None:
+            test = music
+            music = ''''''
+            prevstart = 0
+            instruments = re.finditer(r'midiInstrument = "[^"]*"', text)
+            for match in instruments:
+                start = match.start()
+                music += text[prevstart:start]
+                music += 'midiInstrument = "%s"' % midiinstrument
+                prevstart = match.end()
+            music += text[prevstart:-1]
     with open(fname+'out.ly', 'w') as out:
         out.write(music)
 
