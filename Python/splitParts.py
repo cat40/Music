@@ -52,7 +52,11 @@ def parsedumb(fname, octave):
     with open(fname, 'r') as f:
         text = f.read()
         relatives = re.finditer(r'\\relative [^ ]+', text)
+        music = ''''''
+        prevstart = 0
         for relative in relatives:
             start = relative.start()
-            end = relative.end()
+            prevstart = relative.end()
+            music += text[prevstart:start]  # todo make sure this dosent' have an off by 1 error
+            music += '\\relative c' + octave
             
