@@ -62,19 +62,21 @@ cello = \transpose c c'{
   }
 }
 
-celloTwo = \modalTranspose c e \scale {
-  \relative c {
+celloTwo = \relative c {
   \global
-  R1*15 \pp \bar "||"
-  \verse
+  R1*15
+  \transpose c c,, {
+    \chordmode {
+      g1 \pppp ~ g1 g1 ~ g1 
+      g1 c1 b1:m
+    }
   }
 }
 
-celloThree = \modalTranspose c g \scale {
+celloThree = \modalTranspose c f, \scale {
   \relative c {
   \global
   R1*15 \pp  \bar "||" 
-  \verse
   }
 }
 hornF = \relative c' {
