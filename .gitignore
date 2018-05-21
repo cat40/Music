@@ -1,8 +1,8 @@
 # lilypond
-*.pdf
+#*.pdf
 *.ps
 *.midi
-*.mid
+#*.mid
 *.log
 *~
 
