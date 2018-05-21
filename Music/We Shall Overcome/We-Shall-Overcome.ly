@@ -60,11 +60,20 @@ cello = \transpose c c'{
   }
 }
 
-celloTwo = \relative c {
+celloTwo = \transpose c a {
+  \relative c {
   \global
-  R1*15
-  
-  
+  R1*15 \bar "||"
+  \verse
+  }
+}
+
+celloThree = \transpose c e {
+  \relative c {
+  \global
+  R1*15  \bar "||" 
+  \verse
+  }
 }
 hornF = \relative c' {
    \global
@@ -87,6 +96,10 @@ celloPartTwo = \new Staff \with {
   instrumentName = "Cello"
   midiInstrument = "cello"
 } { \clef bass \celloTwo }
+celloPartThree = \new Staff \with {
+  instrumentName = "Cello"
+  midiInstrument = "cello"
+} { \clef bass \celloThree }
 hornFPart = \new Staff \with {
   instrumentName = "Horn in F"
   midiInstrument = "french horn"
@@ -97,6 +110,7 @@ hornFPart = \new Staff \with {
     \violaPart
     \celloPart
     \celloPartTwo
+    \celloPartThree
     \hornFPart
   >>
   \layout { }
