@@ -64,16 +64,21 @@ cello = \transpose c c'{
 
 celloTwo = \relative c {
   \global
-  R1*15
+  % R1*15
   c,1 g'1
   c1 g1
+  c1 f1
+  e1 g,1
+  g' c
+  d <a c e>1
+  
   r1
-  \transpose c c,, {
+ %{ \transpose c c,, {
     \chordmode {
       g1 \pppp ~ g1 g1 ~ g1 
       g1 c1 b1:m
     }
-  }
+  } %}
 }
 
 celloThree = \modalTranspose c f, \scale {
