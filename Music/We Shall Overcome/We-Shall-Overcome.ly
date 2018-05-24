@@ -58,13 +58,16 @@ viola = \relative c' {
 cello = \transpose c c'{
   \relative c {
     \global
-    \repeat unfold 2 {\verse \bar"||"}
+    \repeat unfold 3 {\verse \bar"||"}
   }
 }
 
 celloTwo = \relative c {
   \global
   R1*15
+  c1 g1
+  c,1 g'1
+  r1
   \transpose c c,, {
     \chordmode {
       g1 \pppp ~ g1 g1 ~ g1 
@@ -76,12 +79,14 @@ celloTwo = \relative c {
 celloThree = \modalTranspose c f, \scale {
   \relative c {
   \global
+  R1*15
   R1*15 \pp  \bar "||" 
   }
 }
 hornF = \relative c' {
    \global
    %\verse
+   R1*15
    R1*15
    R1*11
    <a, c e>1
