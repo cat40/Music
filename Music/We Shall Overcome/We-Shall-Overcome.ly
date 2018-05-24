@@ -69,9 +69,9 @@ celloTwo = \relative c {
   c1 g1
   c1 f1
   e1 g,1
-  g' c
-  d <a c e>1
-  
+  g' c,
+  d a %<a c e>1
+  c a2 g2 f2. r4
   r1
  %{ \transpose c c,, {
     \chordmode {
