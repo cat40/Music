@@ -65,8 +65,8 @@ cello = \transpose c c'{
 celloTwo = \relative c {
   \global
   R1*15
-  c1 g1
   c,1 g'1
+  c1 g1
   r1
   \transpose c c,, {
     \chordmode {
